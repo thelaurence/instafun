@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/lab_09_comments');
+mongoose.connect('mongodb://localhost/instafun_comments');
 require('./models/Comment');
 
 var routes = require('./routes/index');
