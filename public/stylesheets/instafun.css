@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    padding: 50px 10px;
+}
+h1 {
+    padding: 25px 10px;
+    font-family: Serif;
+}
+ul {
+    list-style-type: none;
+}
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:center;
+    /* inline-block space fix */
+    margin-right:-4px;
+    width: 560px;
+    max-width: 560px;
+}
+.wrap-text {
+    word-break: break-all;
+}
+.top-space {
+    margin-top: 1rem;
+}
+.right-space {
+    margin-right: 1rem;
+}
+.left {
+    text-align: left;
+}
+span.glyphicon {
+    color: #337ab7;
+}
+span.glyphicon:hover {
+    color: #ff7f29;
+    cursor: pointer;
+}
+.pull-right {
+    float: right;
+    position: relative;
+    display: inline-block;
+}
+.tooltiptext {
+    visibility: hidden;
+    width: 80px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -20px;
+}
+.pull-right:hover .tooltiptext {
+    visibility: visible;
+}

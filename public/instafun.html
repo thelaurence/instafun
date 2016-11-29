@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>instafun</title>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+    <script src="javascripts/lab_09.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/instafun.css">
+</head>
+<body ng-app="comment" ng-controller="MainCtrl">
+
+<div class="row row-centered">
+    <div class="col-lg-4 col-centered">
+        <h1>Instafun!</h1>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">LG's Instagram Photos</h3>
+            </div>
+            <div ng-init="getPhoto()" class="panel-body">
+                <img ng-src="{{photoUrl}}" class=" img-rounded img-responsive">
+                <br>
+                <button ng-click="getPreviousPhoto()" class="btn btn-primary">
+                    <i class="glyphicon glyphicon-chevron-left"></i>
+                    Previous
+                </button>
+                <button ng-click="getNextPhoto()" class="btn btn-primary">
+                    Next
+                    <i class="glyphicon glyphicon-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+        <input ng-model="name" type="text" class="form-control top-space" placeholder="Your name...">
+        <input ng-model="comment" type="text" class="form-control top-space" placeholder="Your comment...">
+        <button ng-click="addComment()" class="btn btn-primary top-space right-space" type="button">Submit Comment</button>
+        <br><br>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Comments</h3>
+            </div>
+            <div class="panel-body left">
+                <div ng-repeat="comment in comments | orderBy: '-upvotes'">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <strong>{{comment.name}}</strong>
+                            <div class="pull-right">
+                                <span class="tooltiptext">Upvotes</span>
+                                {{comment.upvotes}}
+                                <span class="glyphicon glyphicon-thumbs-up pointer" ng-click="voteUp(comment)"></span>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            {{comment.comment}}
+                        </div><!-- /panel-body -->
+                    </div><!-- /panel panel-default -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
